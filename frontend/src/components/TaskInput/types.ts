@@ -1,3 +1,3 @@
 export interface TaskInputProps {
-    addTask: (content: string) => void;
+    addTask: (content: string, dueDate?: string) => void;
   }

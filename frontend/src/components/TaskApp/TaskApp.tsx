@@ -7,8 +7,8 @@ import { addTaskLogic, toggleTaskCompletion, deleteTaskLogic } from './hooks';
 export const TaskApp: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  const addTask = (content: string) => {
-    const newTask = addTaskLogic(content, tasks);
+  const addTask = (content: string, dueDate?: string) => {
+    const newTask = addTaskLogic(content, tasks, dueDate);
     setTasks(newTask);
   };
 
