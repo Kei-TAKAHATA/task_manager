@@ -23,6 +23,14 @@ export const StyledTaskInputDate = styled.input`
   line-height: 1.2;
 `;
 
+export const StyledTaskInputPriority = styled.select`
+  width: 10%;
+  height: 2.5rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+`;
+
 export const StyledInputButton = styled(Button)`
   height: 2.5rem;
   padding: 10px 20px;

@@ -1,4 +1,4 @@
-export type Priority = '低' | '中' | '高';
+export type Priority = '低' | '中' | '高' | '未設定';
 
 export interface Task {
     id: number;
