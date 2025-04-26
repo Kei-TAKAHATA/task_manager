@@ -1,7 +1,12 @@
-import { Task } from './types';
+import { Task, Priority } from './types';
 
-export const addTaskLogic = (content: string, tasks: Task[], dueDate?: string): Task[] => {
-  const newTask: Task = { id: Date.now(), content, isCompleted: false, dueDate };
+export const addTaskLogic = (
+  content: string,
+  tasks: Task[],
+  dueDate?: string,
+  priority?: Priority
+): Task[] => {
+  const newTask: Task = { id: Date.now(), content, isCompleted: false, dueDate, priority};
   return [...tasks, newTask];
 };
 

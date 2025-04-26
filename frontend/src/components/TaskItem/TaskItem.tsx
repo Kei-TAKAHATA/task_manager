@@ -1,9 +1,10 @@
 import React from 'react';
 import { TaskItemProps } from './types';
-import { Task } from '../TaskApp/types';
-// import { toggleTaskCompletion, deleteTask } from './hooks';
+import { Task, Priority } from '../TaskApp/types';
 
-export const TaskItem: React.FC<TaskItemProps> = ({ task, toggleCompletion, deleteTask }) => {
+export const TaskItem: React.FC<TaskItemProps & { changePriority: (id: number, priority: Priority) => void }> = ({
+  task, toggleCompletion, deleteTask, changePriority
+}) => {
   return (
     <li className="task-item">
       <span
@@ -17,6 +18,16 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, toggleCompletion, dele
           期日: {task.dueDate}
         </span>
       )}
+      <select
+        value={task.priority}
+        onChange={e => changePriority(task.id, e.target.value as Priority)}
+        style={{ marginLeft: '1em' }}
+      >
+        <option value="高">高</option>
+        <option value="中">中</option>
+        <option value="低">低</option>
+        <option value="未設定">未設定</option>
+      </select>
       <button onClick={() => deleteTask(task.id)}>削除</button>
     </li>
   );
