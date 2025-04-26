@@ -12,6 +12,11 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, toggleCompletion, dele
       >
         {task.content}
       </span>
+      {task.dueDate && (
+        <span style={{ marginLeft: '1em', color: '#888' }}>
+          期日: {task.dueDate}
+        </span>
+      )}
       <button onClick={() => deleteTask(task.id)}>削除</button>
     </li>
   );
